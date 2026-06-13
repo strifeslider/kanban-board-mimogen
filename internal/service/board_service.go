@@ -7,19 +7,18 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/user/kanban-saas/pkg/model"
-	"github.com/user/kanban-saas/services/board/internal/repository"
 )
 
 type BoardService struct {
-	boardRepo    *repository.BoardRepository
-	columnRepo   *repository.ColumnRepository
-	workspaceRepo *repository.WorkspaceRepository
+	boardRepo    BoardRepository
+	columnRepo   ColumnRepository
+	workspaceRepo WorkspaceRepository
 }
 
 func NewBoardService(
-	boardRepo *repository.BoardRepository,
-	columnRepo *repository.ColumnRepository,
-	workspaceRepo *repository.WorkspaceRepository,
+	boardRepo BoardRepository,
+	columnRepo ColumnRepository,
+	workspaceRepo WorkspaceRepository,
 ) *BoardService {
 	return &BoardService{
 		boardRepo:     boardRepo,
